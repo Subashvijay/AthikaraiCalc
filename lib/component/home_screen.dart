@@ -30,7 +30,14 @@ class _InputState extends State<Input> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buttons("Calculate"),
+              TextButton(
+                style: TextButton.styleFrom(
+                  primary: Colors.white,
+                  backgroundColor: Colors.blue,
+                ),
+                onPressed: () {},
+                child: const Text('Calculate'),
+              ),
               _buttons("Reset"),
             ],
           ),
@@ -51,7 +58,7 @@ class _InputState extends State<Input> {
               ]),
               for (int i = 1; i <= 5; i++)
                 TableRow(children: [
-                  Text(i.toString()),
+                  Text(amount.text.toString()),
                   Text(i.toString()),
                   Text(i.toString()),
                   Text(i.toString()),
@@ -81,8 +88,6 @@ class _InputState extends State<Input> {
           rate.clear();
           months.clear();
           amount.clear();
-        } else if (buttonName == "Calculate") {
-          print(months.text);
         }
       },
       child: Text(buttonName),
